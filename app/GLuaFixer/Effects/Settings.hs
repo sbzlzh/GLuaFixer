@@ -48,6 +48,9 @@ getSettings filepath = send $ GetSettings filepath
 
 newtype SettingsError = CouldNotParseSettings String
 
+instance Show SettingsError where
+  show (CouldNotParseSettings err) = "无法解析设置: " ++ err
+  
 -- | The default settings file
 settingsFile :: FilePath
 settingsFile = "glualint.json"

@@ -621,7 +621,7 @@ sem ExprSuffixList
         lhs.isMultiline = False
 sem AST
     | AST
-        lhs.pretty = @chunk.pretty $+$ @loc.prettyComments
+        lhs.pretty = @chunk.pretty $+$ @loc.prettyComments $+$ text ""
         lhs.isMultiline = @chunk.isMultiline
         loc.prettyComments = renderMLComments @lhs.ppconf @lhs.indent @chunk.comments
         chunk.comments = @comments
