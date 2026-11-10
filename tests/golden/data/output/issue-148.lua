@@ -1,4 +1,10 @@
-local normalSounds = {Sound("honk1.wav"), Sound("honk2.wav"), Sound("honk3.wav"), Sound("honk4.wav")}
+local normalSounds = {
+    Sound("honk1.wav"),
+    Sound("honk2.wav"),
+    Sound("honk3.wav"),
+    Sound("honk4.wav")
+}
+
 render.DrawBeam(self.StartPos - norm, -- Start
     self.EndPos, -- End
     64 * (1 - self.Life), -- Width
@@ -104,7 +110,13 @@ render.DrawBeam(
     )
 )
 
-local normalSounds = {Sound("honk1.wav"), Sound("honk2.wav"), Sound("honk3.wav"), Sound("honk4.wav")}
+local normalSounds = {
+    Sound("honk1.wav"),
+    Sound("honk2.wav"),
+    Sound("honk3.wav"),
+    Sound("honk4.wav")
+}
+
 render.DrawBeam(self.StartPos - norm, -- Start
     self.EndPos, -- End
     64 * (1 - self.Life), -- Width

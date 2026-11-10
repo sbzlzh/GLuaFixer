@@ -125,6 +125,8 @@ Option | Description
 
 These options affect the pretty printing functionality of `glualint`.
 
+Non-empty table expressions (for example, `a = {...}`) that span multiple lines in the source keep their multiline layout, with one field per line. Expressions within each field, such as `Vector(1, 2, 3)`, can still stay on a single line.
+
 Option | Description
 ----------|------------
 `prettyprint_spaceBetweenParens` | Put a space between all parentheses
