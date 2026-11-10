@@ -1044,7 +1044,9 @@ sem Expr
         loc.prettySingle = braces @lhs.ppconf @loc.emptyContents @fields.pretty
         loc.emptyContents = toEmpty $ null @fields.copy
         fields.indent = @lhs.indent + (if @fields.isMultiline then 1 else 0)
-        fields.someElementsInListAreMultiline = False
+        -- Preserve multiline tables without forcing their expressions onto multiple lines.
+        fields.someElementsInListAreMultiline =
+            lcpLine (rgStart @lhs.statRegion) < lcpLine (rgEnd @lhs.statRegion)
     | BinOpExpr
         lhs.pretty = @left.pretty <-> @op.pretty <-> @right.pretty
         lhs.endsWithPrefixExpression = @right.endsWithPrefixExpression
