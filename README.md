@@ -65,6 +65,7 @@ Example `glualint.json` with the default options:
     "lint_spaceBeforeComma": false,
     "lint_spaceAfterComma": false,
     "lint_maxLineLength": 0,
+    "lint_warningsAreErrors": true,
 
     "prettyprint_spaceBetweenParens": false,
     "prettyprint_spaceBetweenBrackets": false,
@@ -118,6 +119,7 @@ Option | Description
 `lint_spaceBeforeComma` | Whether to warn about spaces before the comma. This option depends on `prettyprint_spaceBeforeComma` on whether the space is wanted.
 `lint_spaceAfterComma` | Whether to warn about spaces after the comma. This option depends on `prettyprint_spaceAfterComma` on whether the space is wanted.
 `lint_maxLineLength` | Warn for lines longer than the given number. Set to 0 to disable.
+`lint_warningsAreErrors` | Whether warnings should cause a non-zero exit code. Set to `false` to only fail on errors (syntax errors, parse errors) but not warnings.
 
 ### Pretty print options
 

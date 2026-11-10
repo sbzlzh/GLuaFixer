@@ -55,13 +55,6 @@ libraryWarnings s p = do
 
   p
 
--- | Warnings for the ai library
-aiWarnings :: AParser String
-aiWarnings =
-  libraryWarnings "ai" $
-    "The function is broken" <$ ident "GetScheduleID"
-      <|> "The function is broken" <$ ident "GetTaskID"
-
 -- | Warnings for the math library
 mathWarnings :: AParser String
 mathWarnings =
@@ -128,7 +121,6 @@ utilWarnings :: AParser String
 utilWarnings =
   libraryWarnings "util" $
     "Use tobool, without the util bit" <$ ident "tobool"
-      <|> "The function is broken" <$ ident "TraceEntityHull"
 
 -- | Warnings for things to do with self
 selfWarnings :: AParser String
@@ -197,7 +189,6 @@ deprecatedSequence opts =
               -- Deprecated meta functions
               try metaFuncWarnings
                 -- Library functions
-                <|> try aiWarnings
                 <|> try mathWarnings
                 <|> try spawnmenuWarnings
                 <|> try stringWarnings
